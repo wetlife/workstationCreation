@@ -1,0 +1,3 @@
+# workstationCreation
+This repo contains scripts to ease the creation of an efficient linux workstation using git, latexmk, vim, chromium,...
+
