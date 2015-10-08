@@ -119,6 +119,9 @@ echo '''synclient MaxTapTime=0 VertEdgeScroll=0 HorizTwoFingerScroll=1
     * by typing ```&> /p/a/t/h/someFile```, one redirects standard out and standard error to the file named someFile located at /p/a/t/h/;
   * 
 
+### Write Technical Documents With $\LaTeX$ Like a Pro
+The most pleasing and efficient workflow I've used to typeset technical documents is using the workflow laid out beautifully [here by Dale Lukas Peterson](http://dlpeterson.com/2013/08/latex-workflow/):
+
 Tags: 
 linux,
 vim,
