@@ -1,0 +1,8 @@
+#!/bin/bash
+## USAGE: kyVimJournalEntryFromTerm <JOURNAL_FILE> [TOPIC_NAME1 TOPIC_NAME2 ..]
+MDFILE='~/tempJournalMetadata.txt'
+echo "\\section*{ `/usr/bin/kydate` }" >> $MDFILE
+echo "\\subsection*{ ${@:2} }" >> $MDFILE
+cat $MDFILE >> $1
+rm $MDFILE
+vim $1

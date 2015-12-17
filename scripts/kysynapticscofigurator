@@ -1,0 +1,2 @@
+#!/bin/sh
+synclient HorizEdgeScroll=0 FingerHigh=50

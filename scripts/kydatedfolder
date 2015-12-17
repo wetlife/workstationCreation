@@ -1,0 +1,4 @@
+#!/bin/sh
+FOLDER_NAME="`kydate`-$1"
+mkdir $FOLDER_NAME
+cd $FOLDER_NAME
