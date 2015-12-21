@@ -121,6 +121,9 @@ echo '''synclient MaxTapTime=0 VertEdgeScroll=0 HorizTwoFingerScroll=1
 
 ### Write Technical Documents With $\LaTeX$ Like a Pro
 The most pleasing and efficient workflow I've used to typeset technical documents is using the workflow laid out beautifully [here by Dale Lukas Peterson](http://dlpeterson.com/2013/08/latex-workflow/):
+- $```bash latexmk -pvc -pdf <file.tex>```
+- $```bash vim <file.tex>```
+The preview compiled pdf updates when changes to file.tex are saved.
 
 Tags: 
 linux,
