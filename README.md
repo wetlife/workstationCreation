@@ -87,37 +87,42 @@ echo 'let g:auto_save = 1 " enable AutoSave(from plugin vim-auto-save) on Vim st
 
 Make the touchpad behave in a less frustrating manner:
 ```bash
-echo '''synclient MaxTapTime=0 VertEdgeScroll=0 HorizTwoFingerScroll=1
+echo '''synclient MaxTapTime=0 VertEdgeScroll=0 HorizTwoFingerScroll=1''' >> ~/.vimrc
 ```
 
 ## Part C: Use the Workflow.
 
 ### Manage windows with i3:
-* let i3 generate its configuration file and use ```alt``` as the modifier-key(mod) when prompted;
-* start a terminal emulator with ```alt-enter```(make use of tab-completion here: start typing a command and press tab; if nothing happens press tab again to see all possible completions);
-* run commands and start applications by pressing ```alt-d``` and then typing the command(make use of tab completion here);
-* vertically tile with ```alt-v```, horizontally tile with ```alt-h```;
-* move focus between windows in the current workspace by holding down ```alt``` while pressing either ```j```, ```k```, ```l```, ```;```, or any arrow-key(you rob i3 of its power by moving your hands off the homerow);
-* move windows within the current workspace by holding down ```alt-shift``` while pressing either ```j```, ```k```, ```l```, ```;```, or any arrow-key(you rob i3 of its power by moving your hands off the homerow);
-* change workspaces by holding down ```alt``` and pressing a number-key;
-* move the current window to a workspace by holding down ```alt-shift``` while pressing a number-key;
+* let i3 generate its configuration file and use `alt` as the modifier-key(mod) when prompted;
+* start a terminal emulator with `alt-enter`
+  * make use of tab-completion in the terminal: start typing a command and press tab; if nothing happens press tab again to see all possible completions;
+* run commands and start applications by pressing `alt-d` and then typing the command(make use of tab completion here);
+* vertically tile new windows with `alt-v`;
+* horizontally tile new windows with `alt-h`;
+* move focus between windows in the current workspace by holding down `alt` while pressing either `j`, `k`, `l`, `;`, or any arrow-key(you rob i3 of its power by moving your hands off the homerow);
+* move windows within the current workspace by holding down `alt-shift` while pressing either `j`, `k`, `l`, `;`, or any arrow-key(you rob i3 of its power by moving your hands off the homerow);
+* change workspaces by holding down `alt-<NUMBER>`, where `<NUMBER>` is a number-key;
+* move the current window to a workspace by holding down `alt-shift-<NUMBER>`, where `<NUMBER>` is a number-key;
 * many people do web browsing on one workspace, email on a second workspace, and work on a third workspace(it is nice to leave a set of windows open, do something else, and later instantly return to the original set of windows); and
-* learn to use the keyboard more than the mouse because you'll experience great efficiency gains(before you know it, you will be the "wizard" who amazes others with flurries of wondrous keyboard-computing!)
+* learn to use the keyboard rather than the mouse where possible and you'll experience great efficiency gains(before you know it, you will be the "wizard" who amazes others with flurries of wondrous keyboard-computing!)
 
 ### Become Powerful at the Command-Line:
-* most commands have usage of the form ```commandName --flag argument```
-* ```cd``` changes the current directory;
-* ```pwd``` prints the working directory;
-* ```echo "all these words"``` prints out the string ```all these words``` to the screen;
-* ```cat``` prints the contents of a text file;
-* ```tail -n 23 someFoo``` prints the last 23 lines of text in
+* most commands have usage of the form `commandName --flag argument`
+* `cd` changes the current directory;
+* `pwd` prints the working directory;
+* ```echo "all these words"``` prints out the string `all these words` to the screen;
+* `cat` prints the contents of a text file;
+* `tail -n 23 someFoo` prints the last 23 lines of text in file `someFoo`;
 * use tab-completion to reduce unnecessary typing;
 * know how to redirect and pipe output to create powerful command pipelines:
-  * ```>``` redirects command output as explained below(careful, this will overwrite existing files):
-    * by default, ```>``` redirects standard output, which is what is seen printed to a terminal in response to a command;
-    * by typing ```2>```, one can redirect error messages spat out by a command; and
-    * by typing ```&> /p/a/t/h/someFile```, one redirects standard out and standard error to the file named someFile located at /p/a/t/h/;
-  * 
+  * `|` pipes output of one program into another:
+   * `progFoo | progToo` pipes output from `progFoo` into `progToo`;
+  * `>` redirects command output (overwrites existing files!):
+   * `foo > someFile` redirects standard output, which is what is seen printed to a terminal in response to a command;
+   * `foo 2> fooBooHoo` redirects errors from command `foo` into file `fooBooHoo`; and
+   * `&> /p/a/t/h/someFile` redirects standard out and standard error to the file named `someFile` located at `/p/a/t/h/`;
+  * `>>` appends redirected standard output to a file
+   * `echo "appendage" >> someFile` appends a newline and the text `appendage` to file `someFile`.
 
 ### Write Technical Documents With $\LaTeX$ Like a Pro
 The most pleasing and efficient workflow I've used to typeset technical documents is using the workflow laid out beautifully [here by Dale Lukas Peterson](http://dlpeterson.com/2013/08/latex-workflow/):
