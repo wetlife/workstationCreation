@@ -1,29 +1,34 @@
 # workstationCreation
 This repo contains scripts to streamline workflows on an efficient linux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow, as well as the workflow. Steps are listed in the order I take them.
 
-## Part A: Easily Run a Linux Workstation Alongside ChromeOS!
+## Part A: Easily Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
 1. Put the chromebook in developer-mode.
 2. Download crouton from https://goo.gl/fd3zc .
-3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing ```shell```
-4. Change directory(cd) to your Downloads folder (because that's where crouton downloads to):``` $ cd ~/Downloads ```
-5. Install a nicely packaged chroot-environment that runs alongside ChromeOS: ``` sh -e ./crouton -r trusty -t lxde ```
-  * available releases are listed when the following command is entered at chrome's shell: ```sh -e crouton -r list```
-  * available targets are listed when the following command is entered at chrome's shell: ```sh -e ./crouton -t list```
-  * A chroot-environment can be named with passing the flag -n to crouton followed by the desired name, e.g. ```sh -e crouton -r trusty -t lxde -n myDesiredNameInPlaceOfThisCamelCasedCraziness```
-6. Enter the chroot-environment with ```enter-chroot``
+3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing `shell`
+4. Change directory(cd) to your Downloads folder (because that's where crouton downloads to):`$ cd ~/Downloads`
+5. Install a nicely packaged chroot-environment that runs alongside ChromeOS: `sh -e ./crouton -r trusty -t lxde`
+  * available releases are listed when the following command is entered at chrome's shell: `sh -e crouton -r list`
+  * available targets are listed when the following command is entered at chrome's shell: `sh -e ./crouton -t list`
+  * A chroot-environment can be named with passing the flag -n to crouton followed by the desired name, e.g. `sh -e crouton -r trusty -t lxde -n myDesiredNameInPlaceOfThisCamelCasedCraziness`
+6. Enter the chroot-environment with `enter-chroot`
 7. Install useful software and work more efficiently than ever.
 
 ## Part B: Install Useful Software
-### for Debian, Ubuntu, and Mint: 
+### for Debian, Ubuntu, and Mint:
+Install my most useful software with apt-get:
 ```bash
 $ sudo apt-get update; sudo apt-get install git curl i3 dmenu texlive sshfs feh rsync texlive-publisher texlive-math-extra texlive-latex-recommended texlive-xelatex latexmk biber evince
 ```
 
 ### for Arch:
+Install my most useful software with pacman:
 ```bash
-$ sudo pacman -S i3 vim evince git dmenu xorg lxterminal alsa-tools texlive-most python python-numpy python-matplotlib ipython 
+$ sudo pacman -Sy i3 vim evince git dmenu xorg lxterminal alsa-tools texlive-most python python-numpy python-matplotlib ipython
+```
+
 adopt lxterminal by editing ~/.i3/config:
 just under the line "set $mod = Mod1", add this line:
+```bash
 set $term = lexterminal
 ```
 
