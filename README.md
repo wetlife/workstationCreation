@@ -104,23 +104,26 @@ echo '''synclient MaxTapTime=0 VertEdgeScroll=0 HorizTwoFingerScroll=1
 * many people do web browsing on one workspace, email on a second workspace, and work on a third workspace(it is nice to leave a set of windows open, do something else, and later instantly return to the original set of windows); and
 * learn to use the keyboard more than the mouse because you'll experience great efficiency gains(before you know it, you will be the "wizard" who amazes others with flurries of wondrous keyboard-computing!)
 
-### Become Powerful at the Command-Line:
-* most commands have usage of the form ```commandName --flag argument```
-* ```cd``` changes the current directory;
-* ```pwd``` prints the working directory;
-* ```echo "all these words"``` prints out the string ```all these words``` to the screen;
-* ```cat``` prints the contents of a text file;
-* ```tail -n 23 someFoo``` prints the last 23 lines of text in
-* use tab-completion to reduce unnecessary typing;
-* know how to redirect and pipe output to create powerful command pipelines:
-  * ```>``` redirects command output as explained below(careful, this will overwrite existing files):
-    * by default, ```>``` redirects standard output, which is what is seen printed to a terminal in response to a command;
-    * by typing ```2>```, one can redirect error messages spat out by a command; and
-    * by typing ```&> /p/a/t/h/someFile```, one redirects standard out and standard error to the file named someFile located at /p/a/t/h/;
-  * 
+### Use Git for Distributed Version Control
+Setup the minimal configuration info:
 
-### Write Technical Documents With $\LaTeX$ Like a Pro
-The most pleasing and efficient workflow I've used to typeset technical documents is using the workflow laid out beautifully [here by Dale Lukas Peterson](http://dlpeterson.com/2013/08/latex-workflow/):
+* ```$ git config --global user.name "John Doe"```
+* ```$ git config --global user.email johndoe@example.com```
+* Create global git ignore file [```~/.gitignore_global```](git-workstation-config/.gitignore_global)
+* Create a local [```.gitignore```](giti-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
+
+### Write Technical Documents With $$\LaTeX$$ Like a Pro
+A pleasing and efficient workflow to typeset technical documents is the workflow laid out beautifully
+[here](http://dlpeterson.com/2013/08/latex-workflow/)
+by Dale Lukas Peterson
+
+### Setup Git
+* Set global git parameters:
+
+  * ```$ git config --global user.name "Kyle Thomas"```
+
+  * ```$ git config --global user.email "wetlife@gmail.com```
+
 
 Tags: 
 linux,
