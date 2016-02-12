@@ -1,7 +1,7 @@
 # workstationCreation
 This repo contains scripts to streamline workflows on an efficient linux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow, as well as the workflow. Steps are listed in the order I take them.
 
-## Part A: Easily Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
+## Part A: Easily Install and Rum a Linux Workstation on Alongside ChromeOS on a Chromebook!
 1. Put the chromebook in developer-mode.
 2. Download crouton from https://goo.gl/fd3zc .
 3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing `shell`
@@ -42,10 +42,10 @@ $ su
 
 Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 with this script:
 ```~/.bin/wallpaper-setter-script.sh``` :
-```
+
 #!sh
 feh --bg-max --randomize ~/.wallpaper/* &
-```
+`https://github.com/wetlife/workstationCreation.git``
 
 ### Setup VIM:
 echo good initial settings into ~/.vimrc:
@@ -62,7 +62,6 @@ Get the wombat256mod colorscheme by downloading wombat256mod.vim from http://www
 $ mkdir -p ~/.vim/colors
 $ curl http://www.vim.org/scripts/download_script.php?src_id=13400 > ~/.vim/wombat256mod.vim
 $ echo 'colorscheme wombat256mod " set a nice colorscheme' >> ~/.vimrc```
-```
 
 Install vim's pathogen plugin manager:
 ```bash
@@ -132,7 +131,8 @@ by Dale Lukas Peterson
 
   * ```$ git config --global user.email "wetlife@gmail.com```
 
-=======
+---
+
 ### Become Powerful at the Command-Line:
 * most commands have usage of the form `commandName --flag argument`
 * `cd` changes the current directory;
@@ -157,7 +157,39 @@ The most pleasing and efficient workflow I've used to typeset technical document
 - $`vim <file.tex>`
 
 The previewed pdf is recompiled and the preview is updated when changes to file.tex are saved.
->>>>>>> origin/master
+
+## The Art of Copy-Pasta
+### Windows' flavor(schnozberries):
+- `<ctrl>-c` copies a selection
+- `<ctrl>-x` copies then deletes a selection, which is commonly called "cut"-ing
+- `<ctrl>-v` pastes
+- `<ctrl>-f` finds text
+- `<alt>-<tab> [-<tab>] [-<tab>] ...` switches applications
+- `<ctrl>-<tab> [-<tab>] [-<tab>] ...` switches tabs
+- `<ctrl>-w` closes a tab
+- `<alt>-<F4>` closes an application
+- `<ctrl>-<alt>-<delete>` opens dialog to access task manager or logoff
+- `<ctrl>-<shift>-<escape>` opens the task manager
+- `<ctrl>-<left arrow>` moves the cursor a "word" to the left
+- `<ctrl>-<right arrow>` moves the cursor a "word" to the right
+- `<ctrl>-<shift>-<left arrow>` selects the "word" to the left
+- `<ctrl>-<shift>-<right arrow>` selects the "word" to the right
+- `<ctrl>-<delete>` and `<ctrl>-<backspace>` kill entire words at a time
+- pressing `<shift>` while pressing the `<left mouse button>` a second time selects everything selectable which flows between the last two locations the button was pressed
+- pressing `<ctrl>` while selecting several items allows one to select those individual items
+### In vi, Though
+- `i` enters insert mode
+- `a` enters insert mode one position right of, or "after," the cursor's position
+- `h`, `j`, `k`, and `l` move the cursor left, right, up, and down respectively while in normal mode
+- `<escape>` and `<ctrl>-{` both move the cursor one position to the left and enter normal mode
+- `w` moves forward a word
+- `b` moves backward a word
+- `r` replaces a selection or any character under the cursor with something
+- `s` substitutes an arbitrary string of text for the selection or the character under the cursor
+
+## Driving a Web Browser Efficiently
+- `<ctrl>-l` selects all text in the address bar.
+- Typing `<ctrl>-l`, `wikipedia`, then `<enter>` browses to `www.wikipedia.com`.
 
 Tags: 
 linux,
@@ -167,3 +199,13 @@ latex workflow,
 latexmk,
 i3,
 wetlife's blog
+excel,
+chrome,
+internet explorer,
+web browser,
+terminal,
+shell,
+hotkeys,
+keyboard shortcuts,
+keyboard navigation,
+driving a computer from the keyboard,
