@@ -43,9 +43,11 @@ $ su
 Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 with this script:
 ```~/.bin/wallpaper-setter-script.sh``` :
 
+```bash
 #!sh
 feh --bg-max --randomize ~/.wallpaper/* &
 `https://github.com/wetlife/workstationCreation.git``
+```
 
 ### Setup VIM:
 echo good initial settings into ~/.vimrc:
