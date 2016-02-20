@@ -1,0 +1,10 @@
+#!/bin/bash
+#USAGE: kyVimJournalEntryFromTerm <JOURNAL_FILE> [TOPIC_NAME1 TOPIC_NAME2 ..]
+JOURNAL_FILE=~/Downloads/journal/contents.tex
+echo "
+%===============================
+\\section*{ `/usr/bin/kydate` }
+\\subsection*{ ${@:1} }
+%===============================" >> $JOURNAL_FILE
+echo ":normal Go" > ~/Go
+vim $JOURNAL_FILE -s ~/Go # the -s flag allows normal-mode macros

@@ -1,7 +1,7 @@
 # workstationCreation
-This repo contains scripts to streamline workflows on an efficient linux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow, as well as the workflow. Steps are listed in the order I take them.
+This repo contains scripts to streamline workflows on an efficient linux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
 
-## Part A: Easily Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
+## Easily Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
 1. Put the chromebook in developer-mode.
 2. Download crouton from https://goo.gl/fd3zc .
 3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing `shell`
@@ -13,7 +13,7 @@ This repo contains scripts to streamline workflows on an efficient linux worksta
 6. Enter the chroot-environment with `enter-chroot`
 7. Install useful software and work more efficiently than ever.
 
-## Part B: Install Useful Software
+## Install Useful Software
 ### for Debian, Ubuntu, and Mint:
 Install my most useful software with apt-get:
 ```bash
@@ -42,7 +42,7 @@ $ su
 
 Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 with this script:
 ```~/.bin/wallpaper-setter-script.sh``` :
-```
+```bash
 #!sh
 feh --bg-max --randomize ~/.wallpaper/* &
 ```
@@ -90,12 +90,10 @@ curl git@github.com:vim-scripts/vim-auto-save.git > ~/.vim/bundle/vim-auto-save 
 echo 'let g:auto_save = 1 " enable AutoSave(from plugin vim-auto-save) on Vim startup' >> ~/.vimrc
 ```
 
-Make the touchpad behave in a less frustrating manner:
-```bash
-echo '''synclient MaxTapTime=0 VertEdgeScroll=0 HorizTwoFingerScroll=1''' >> ~/.vimrc
-```
+### Use and document plugin breakindent 
 
-## Part C: Use the Workflow.
+
+## Use the Workflow.
 
 ### Manage windows with i3:
 * let i3 generate its configuration file and use `alt` as the modifier-key(mod) when prompted;

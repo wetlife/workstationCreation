@@ -1,0 +1,2 @@
+#!/bin/sh
+synclient HorizEdgeScroll=0 VertEdgeScroll=0 FingerHigh=35 MaxTapTime=0
