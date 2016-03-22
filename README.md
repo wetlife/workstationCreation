@@ -55,6 +55,8 @@ Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 wit
 feh --bg-max --randomize ~/.wallpaper/* &
 `https://github.com/wetlife/workstationCreation.git``
 ```
+### Get 256 colors in terminal:
+write a line in <readline.something> to set colors to 256. Also use any gui preference-editor is in the chosen terminal emulator, though these won't allow setting 256 colors.
 
 ### Setup VIM:
 echo good initial settings into ~/.vimrc:
@@ -97,12 +99,13 @@ $ mkdir ~/.vim/bundle/vim-auto-save &&\
 curl git@github.com:vim-scripts/vim-auto-save.git > ~/.vim/bundle/vim-auto-save &&\
 echo 'let g:auto_save = 1 " enable AutoSave(from plugin vim-auto-save) on Vim startup' >> ~/.vimrc
 ```
-
+---
+---
 ### Use and document plugin breakindent 
-
+---
+---
 
 ## Use the Workflow.
-
 ### Manage windows with i3:
 * let i3 generate its configuration file and use `alt` as the modifier-key(mod) when prompted;
 * start a terminal emulator with `alt-enter`
@@ -124,7 +127,7 @@ Setup the minimal configuration info:
 * ```$ git config --global user.name "John Doe"```
 * ```$ git config --global user.email johndoe@example.com```
 * Create global git ignore file [```~/.gitignore_global```](git-workstation-config/.gitignore_global)
-* Create a local [```.gitignore```](giti-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
+* Create a local [```.gitignore```](git-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
 
 ### Write Technical Documents With $$\LaTeX$$ Like a Pro
 A pleasing and efficient workflow to typeset technical documents is the workflow laid out beautifully
@@ -166,7 +169,7 @@ The most pleasing and efficient workflow I've used to typeset technical document
 The previewed pdf is recompiled and the preview is updated when changes to file.tex are saved.
 
 ## The Art of Copy-Pasta
-### Windows' flavor(schnozberries):
+### Windows' flavor(tastes like schnozberries):
 - `<ctrl>-c` copies a selection
 - `<ctrl>-x` copies then deletes a selection, which is commonly called "cut"-ing
 - `<ctrl>-v` pastes
@@ -184,11 +187,12 @@ The previewed pdf is recompiled and the preview is updated when changes to file.
 - `<ctrl>-<delete>` and `<ctrl>-<backspace>` kill entire words at a time
 - pressing `<shift>` while pressing the `<left mouse button>` a second time selects everything selectable which flows between the last two locations the button was pressed
 - pressing `<ctrl>` while selecting several items allows one to select those individual items
-### In vi, Though
+
+### vi-flavor:
 - `i` enters insert mode
 - `a` enters insert mode one position right of, or "after," the cursor's position
 - `h`, `j`, `k`, and `l` move the cursor left, right, up, and down respectively while in normal mode
-- `<escape>` and `<ctrl>-{` both move the cursor one position to the left and enter normal mode
+- `<escape>` and `<ctrl>-[` both move the cursor one position to the left and enter normal mode
 - `w` moves forward a word
 - `b` moves backward a word
 - `r` replaces a selection or any character under the cursor with something
@@ -196,7 +200,7 @@ The previewed pdf is recompiled and the preview is updated when changes to file.
 
 ## Driving a Web Browser Efficiently
 - `<ctrl>-l` selects all text in the address bar.
-- Typing `<ctrl>-l`, `wikipedia`, then `<enter>` browses to `www.wikipedia.com`.
+- Typing `<ctrl>-l`, `wikipedia`, then `<ctrl>-<enter>` www.wikipedia.com.
 
 Tags: 
 linux,
@@ -205,10 +209,7 @@ tiling window manager,
 latex workflow,
 latexmk,
 i3,
-wetlife's blog
-excel,
-chrome,
-internet explorer,
+wetlife's blog,
 web browser,
 terminal,
 shell,
@@ -216,3 +217,4 @@ hotkeys,
 keyboard shortcuts,
 keyboard navigation,
 driving a computer from the keyboard,
+

@@ -1,3 +1,4 @@
 #!/bin/sh
-sudo cp ./* /usr/bin/
-sudo chmod 755 /usr/bin/ky*
+#author: kyle thomas
+sudo chmod 755 ./*
+sudo cp ./* /usr/local/bin/
