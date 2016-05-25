@@ -1,0 +1,14 @@
+#!/bin/sh
+#Kyle Thomas's pause screen blanking
+xset s off
+xset -dpms
+if [[ $# = 1 ]]
+  then echo "$0 will resume screen blanking after $1"
+  sleep $1
+else
+  echo "Supply a time as the only argument to $0 to specify the time that the screen blanking should be paused, e.g. \$$0 30m \n $0 will resume screen blanking after the default of 3h."
+  sleep 3h
+fi
+echo "$0 is now resuming screen blanking."
+xset s on
+xset +dpms
