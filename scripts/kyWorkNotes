@@ -1,0 +1,9 @@
+#!/bin/sh
+# USAGE: $ kyWorkNotes <semantic-name-of-notes-file>
+# kyWorkNotes prepends date formatted as YYYY.MM.DD- before <semantic-name-of-notes-file>
+NOTESFIlE = "`date +%Y.%m.%d`-$1"
+echo "# TODO" >> "$NOTESFILE"
+echo "" >> "$NOTESFILE"
+echo "# Notes" >> "$NOTESFILE"
+echo "" >> "$NOTESFILE"
+vim "$NOTESFILE"

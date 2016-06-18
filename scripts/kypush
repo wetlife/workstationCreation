@@ -1,0 +1,25 @@
+#!/bin/bash
+# USAGE: $ kypush <git-repo-in-home-dir-1> [...git-repo-in-home-dir-N]
+# SYNOPSIS: kypush adds changes, commits with interactive commit-message-entry, and pushes
+echo "\$(\`pwd\`) > ~/pwd"
+echo "$(`pwd`)" > ~/pwd
+echo "cd ~"
+cd ~
+echo "loop through git repos in ~"
+for arg in "$@"
+do
+  echo cd "$arg"
+  cd "$arg"
+  echo "git add -A ."
+  git add -A .
+  echo "git commit"
+  git commit
+  echo "git push"
+  git push
+  echo "cd .."
+  cd ..
+done
+echo "cd into original working dir saved in ~/pwd"
+cd "$(`cat ~/pwd`)"
+echo "rm ~/pwd"
+rm ~/pwd
