@@ -1,5 +1,5 @@
 # workstationCreation
-This repo contains scripts to streamline workflows on an efficient linux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
+This repo contains scripts to streamline workflows on an efficient Vlinux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
 
 <<<<<<< HEAD
 ## Easily Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
