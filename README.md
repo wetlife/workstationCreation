@@ -1,11 +1,7 @@
 # workstationCreation
 This repo contains scripts to streamline workflows on an efficient Vlinux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
 
-<<<<<<< HEAD
 ## Easily Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
-=======
-## Part A: Easily Install and Rum a Linux Workstation on Alongside ChromeOS on a Chromebook!
->>>>>>> dfe6f0670db19b81e76c8da7feb0690daa92ed10
 1. Put the chromebook in developer-mode.
 2. Download crouton from https://goo.gl/fd3zc .
 3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing `shell`
@@ -33,7 +29,7 @@ $ sudo pacman -Sy i3 vim evince git dmenu xorg lxterminal alsa-tools texlive-mos
 adopt lxterminal by editing ~/.i3/config:
 just under the line "set $mod = Mod1", add this line:
 ```bash
-set $term = lexterminal
+set $term = lxterminal
 ```
 
 Use colored prompts to visually distinguish the root-shell-prompt from the user-shell-prompt and beautify
@@ -45,11 +41,8 @@ $ su
 ```
 
 Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 with this script:
-```~/.bin/wallpaper-setter-script.sh``` :
-<<<<<<< HEAD
-=======
+`~/.bin/wallpaper-setter-script.sh`
 
->>>>>>> dfe6f0670db19b81e76c8da7feb0690daa92ed10
 ```bash
 #!sh
 feh --bg-max --randomize ~/.wallpaper/* &
@@ -99,11 +92,8 @@ $ mkdir ~/.vim/bundle/vim-auto-save &&\
 curl git@github.com:vim-scripts/vim-auto-save.git > ~/.vim/bundle/vim-auto-save &&\
 echo 'let g:auto_save = 1 " enable AutoSave(from plugin vim-auto-save) on Vim startup' >> ~/.vimrc
 ```
----
----
 ### Use and document plugin breakindent 
----
----
+docstub
 
 ## Use the Workflow.
 ### Manage windows with i3:
@@ -120,7 +110,6 @@ echo 'let g:auto_save = 1 " enable AutoSave(from plugin vim-auto-save) on Vim st
 * many people do web browsing on one workspace, email on a second workspace, and work on a third workspace(it is nice to leave a set of windows open, do something else, and later instantly return to the original set of windows); and
 * learn to use the keyboard rather than the mouse where possible and you'll experience great efficiency gains(before you know it, you will be the "wizard" who amazes others with flurries of wondrous keyboard-computing!)
 
-<<<<<<< HEAD
 ### Use Git for Distributed Version Control
 Setup the minimal configuration info:
 
@@ -128,12 +117,12 @@ Setup the minimal configuration info:
 * ```$ git config --global user.email johndoe@example.com```
 * Create global git ignore file [```~/.gitignore_global```](git-workstation-config/.gitignore_global)
 * Create a local [```.gitignore```](git-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
-
-### Write Technical Documents With $$\LaTeX$$ Like a Pro
-A pleasing and efficient workflow to typeset technical documents is the workflow laid out beautifully
-[here](http://dlpeterson.com/2013/08/latex-workflow/)
-by Dale Lukas Peterson
-
+#### Using vim as the mergetool
+- configure git with the following steps(I added `--global` to original steps found here: http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/)
+  - ```bash $ git config --global merge.tool vimdiff```
+  - ```bash $ git config --global merge.conflictstyle diff3```
+  - ```bash $ git config --global mergetool.prompt false```
+- From now on use the command `git mergetool` to resolve merge conflicts with vim windows using `:diffg[et] RE[MOTE]`
 ### Setup Git
 * Set global git parameters:
 
