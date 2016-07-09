@@ -112,24 +112,20 @@ docstub
 
 ### Use Git for Distributed Version Control
 Setup the minimal configuration info:
-
 * ```$ git config --global user.name "John Doe"```
 * ```$ git config --global user.email johndoe@example.com```
-* Create global git ignore file [```~/.gitignore_global```](git-workstation-config/.gitignore_global)
+* Create global git ignore file 
+  * ```$ git config --global core.excludesfile ~/.gitignore_global
+  * [```~/.gitignore_global```](git-workstation-config/.gitignore_global)
+  * an example global ignore file that uses octocat's recommended miscelaneous-, tex-, and python-global-ignore files: `./config_files/.gitconfig_global`
 * Create a local [```.gitignore```](git-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
-#### Using vim as the mergetool
+
+#### Set Vim's diff3 as Git's Mergetool
 - configure git with the following steps(I added `--global` to original steps found here: http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/)
   - ```bash $ git config --global merge.tool vimdiff```
   - ```bash $ git config --global merge.conflictstyle diff3```
   - ```bash $ git config --global mergetool.prompt false```
 - From now on use the command `git mergetool` to resolve merge conflicts with vim windows using `:diffg[et] RE[MOTE]`
-### Setup Git
-* Set global git parameters:
-
-  * ```$ git config --global user.name "Kyle Thomas"```
-
-  * ```$ git config --global user.email "wetlife@gmail.com```
-
 ---
 
 ### Become Powerful at the Command-Line:
