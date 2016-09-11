@@ -26,13 +26,26 @@ Install my most useful software with pacman:
 $ sudo pacman -Sy i3 vim evince git dmenu xorg lxterminal alsa-tools texlive-most python python-numpy python-matplotlib ipython
 ```
 
-adopt lxterminal by editing ~/.i3/config:
+## Adopt a Lovely Configuration
+### These configurations require only a POSIX-compliant system.
+POSIX compliance is the agreement that provides a homogenous user interface across OSX, most big-name distributions(distros) of GNU/Linux, UNIX, BSD, and likely others your author omits out of ignorance.
+
+#### Adopt lxterminal by editing ~/.i3/config:
 just under the line "set $mod = Mod1", add this line:
 ```bash
 set $term = lxterminal
 ```
 
-Use colored prompts to visually distinguish the root-shell-prompt from the user-shell-prompt and beautify
+#### Use Readline with Keybindings from Vi Rather than Emacs
+Use the following commands to use vi-mode when entering commands. The first command sets the sysem-wide default behavior, but requires root priveleges to execute. The second command sets the current user's default behavior of readline.
+1. `echo 'set input-mode vi' > inputrc && mv inputrc /etc/`
+2. `echo 'set input-mode vi' > ~/.inputrc`
+
+#### Colored Prompts
+Colored prompts accomplish several useful functions. 
+- beautify the user's interface;
+- visually distinguish important peices of information in the user's environment from one another(for example the current directory from the current user's name, so that reading the present working directory, `pwd`, becomes just finding a particular color the user has chosen in the prompt; and
+- visually the root-shell-prompt from the user-shell-prompt
 both:
 ```bash
 $ echo "PS1='\[\e[4;33m\]\u\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[1;32m\]\$\[\e[m\] \[\e[0;37m\]'" >> ~/.bashrc
@@ -48,24 +61,26 @@ Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 wit
 feh --bg-max --randomize ~/.wallpaper/* &
 `https://github.com/wetlife/workstationCreation.git``
 ```
-### Get 256 colors in terminal:
-write a line in <readline.something> to set colors to 256. Also use any gui preference-editor is in the chosen terminal emulator, though these won't allow setting 256 colors.
 
 ### Setup VIM:
 echo good initial settings into ~/.vimrc:
-```bash
-$ echo 'syntax on
+```bash $
+echo 'syntax on
 filetype plugin indent on
 set t_Co=256
 set whichwrap+=<,>,h,l,[,] " allow left/right nav. across newlines
 set number " enable line-numbering' >> ~/.vimrc
 ```
 
-Get the wombat256mod colorscheme by downloading wombat256mod.vim from http://www.vim.org/scripts/script.php?script_id=2465
+Get the wombat256mod colorscheme by downloading wombat256mod.vim from
+http://www.vim.org/scripts/script.php?script_id=2465
+
+Shell:
 ```bash
-$ mkdir -p ~/.vim/colors
-$ curl http://www.vim.org/scripts/download_script.php?src_id=13400 > ~/.vim/wombat256mod.vim
-$ echo 'colorscheme wombat256mod " set a nice colorscheme' >> ~/.vimrc```
+mkdir -p ~/.vim/colors
+curl http://www.vim.org/scripts/download_script.php?src_id=13400 > ~/.vim/wombat256mod.vim
+echo 'colorscheme wombat256mod " set a nice colorscheme' >> ~/.vimrc
+```
 
 Install vim's pathogen plugin manager:
 ```bash
@@ -74,15 +89,15 @@ $ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 $ echo 'execute pathogen#infect()' >> ~/.vimrc
 ```
 
-install the vim-airline plugin:
+install the vim-airline plugin from the shell:
 ```bash
-$ git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
-$ echo 'set laststatus=2' >> ~/.vimrc
+git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
+echo 'set laststatus=2' >> ~/.vimrc
 ```
 
 Install the syntastic plugin:
 ```bash
-$ cd ~/.vim/bundle && \
+cd ~/.vim/bundle && \
   git clone https://github.com/scrooloose/syntastic.git
 ```
 
@@ -112,20 +127,20 @@ docstub
 
 ### Use Git for Distributed Version Control
 Setup the minimal configuration info:
-* ```$ git config --global user.name "John Doe"```
-* ```$ git config --global user.email johndoe@example.com```
+* ```git config --global user.name "John Doe"```
+* ```git config --global user.email johndoe@example.com```
 * Create global git ignore file 
-  * ```$ git config --global core.excludesfile ~/.gitignore_global
+  * ```git config --global core.excludesfile ~/.gitignore_global
   * [```~/.gitignore_global```](git-workstation-config/.gitignore_global)
   * an example global ignore file that uses octocat's recommended miscelaneous-, tex-, and python-global-ignore files: `./config_files/.gitconfig_global`
 * Create a local [```.gitignore```](git-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
 
 #### Set Vim's diff3 as Git's Mergetool
-- configure git with the following steps(I added `--global` to original steps found here: http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/)
-  - ```bash $ git config --global merge.tool vimdiff```
-  - ```bash $ git config --global merge.conflictstyle diff3```
-  - ```bash $ git config --global mergetool.prompt false```
-- From now on use the command `git mergetool` to resolve merge conflicts with vim windows using `:diffg[et] RE[MOTE]`
+- configure git with the following commands(I added `--global` to original steps found here: http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/)
+  - ```git config --global merge.tool vimdiff```
+  - ```git config --global merge.conflictstyle diff3```
+  - ```git config --global mergetool.prompt false```
+- From now on use the command `git mergetool` to resolve merge conflicts with vim using vim-commands of the form `:diffg[et] RE[MOTE]`
 ---
 
 ### Become Powerful at the Command-Line:
@@ -134,6 +149,7 @@ Setup the minimal configuration info:
 * `pwd` prints the working directory;
 * ```echo "all these words"``` prints out the string `all these words` to the screen;
 * `cat` prints the contents of a text file;
+* `head -n 5 oneFoo` prints the first 5 lines of file `oneFoo`;
 * `tail -n 23 someFoo` prints the last 23 lines of text in file `someFoo`;
 * use tab-completion to reduce unnecessary typing;
 * know how to redirect and pipe output to create powerful command pipelines:
@@ -144,7 +160,7 @@ Setup the minimal configuration info:
    * `foo 2> fooBooHoo` redirects errors from command `foo` into file `fooBooHoo`; and
    * `&> /p/a/t/h/someFile` redirects standard out and standard error to the file named `someFile` located at `/p/a/t/h/`;
   * `>>` appends redirected standard output to a file
-   * `echo "appendage" >> someFile` appends a newline and the text `appendage` to file `someFile`.
+   * `echo "appendage" >> someFile` appends a newline and the text `appendage` to the file named `someFile`.
 
 ### Write Technical Documents With $\LaTeX$ Like a Pro
 The most pleasing and efficient workflow I've used to typeset technical documents is using the workflow laid out beautifully [here by Dale Lukas Peterson](http://dlpeterson.com/2013/08/latex-workflow/):
@@ -186,6 +202,10 @@ The previewed pdf is recompiled and the preview is updated when changes to file.
 ## Driving a Web Browser Efficiently
 - `<ctrl>-l` selects all text in the address bar.
 - Typing `<ctrl>-l`, `wikipedia`, then `<ctrl>-<enter>` www.wikipedia.com.
+
+## Use Vimium to Browse the Internet Efficiently
+Vimium is a chrome and chromium extension that provides a vim-like, homerow-driven interface. Notable features include:
+- Follow links with `f` followed by whatever characters show up on the desired link after pressing `f`.
 
 Tags: 
 linux,
