@@ -203,3 +203,5 @@ keyboard shortcuts,
 keyboard navigation,
 driving a computer from the keyboard,
 
+#TODOC
+- introduce pmount and discuss its utility of allowing users to mount without a listing in /etc/fstab and without sudo
