@@ -1,7 +1,7 @@
 # workstationCreation
 This repo contains scripts to streamline workflows on an efficient Vlinux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
 
-## Easily Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
+## Easily Run a Linux Workstation Alongside ChromeOS on a Chromebook!
 1. Put the chromebook in developer-mode.
 2. Download crouton from https://goo.gl/fd3zc .
 3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing `shell`
