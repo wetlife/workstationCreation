@@ -38,9 +38,10 @@ set $term = lxterminal
 
 #### Use Readline with Keybindings from Vi Rather than Emacs
 Use the following commands to use vi-mode when entering commands. The first command sets the sysem-wide default behavior, but requires root priveleges to execute. The second command sets the current user's default behavior of readline.
-1. `echo 'set input-mode vi' > inputrc && mv inputrc /etc/`
-2. `echo 'set input-mode vi' > ~/.inputrc`
-
+1. `cp /etc/inputrc . && echo 'set editing-mode vi' >> inputrc && sudo mv inputrc /etc/`
+2. `echo 'set editing-mode vi' >> ~/.inputrc`
+3. press <CTRL><x><CTRL><r> to reload inputrc
+`echo "foo"`
 #### Colored Prompts
 Colored prompts accomplish several useful functions. 
 - beautify the user's interface;
