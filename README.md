@@ -28,7 +28,7 @@ $ sudo pacman -Sy i3 vim evince git dmenu xorg lxterminal alsa-tools texlive-mos
 
 ## Adopt a Lovely Configuration
 ### These configurations require only a POSIX-compliant system.
-POSIX compliance is the agreement that provides a homogenous user interface across OSX, most big-name distributions(distros) of GNU/Linux, UNIX, BSD, and likely others your author omits out of ignorance.
+POSIX compliance is the agreement that provides a homogeneous user interface across OSX, most big-name distributions(distros) of GNU/Linux, UNIX, BSD, and likely others your author omits out of ignorance.
 
 #### Adopt lxterminal by editing ~/.i3/config:
 just under the line "set $mod = Mod1", add this line:
@@ -71,6 +71,11 @@ filetype plugin indent on
 set t_Co=256
 set whichwrap+=<,>,h,l,[,] " allow left/right nav. across newlines
 set number " enable line-numbering' >> ~/.vimrc
+set t_Co=256
+set ts=2 sw=2
+set bri
+set showbreak=>>
+set linebreak
 ```
 
 Get the wombat256mod colorscheme by downloading wombat256mod.vim from
@@ -101,6 +106,13 @@ Install the syntastic plugin:
 cd ~/.vim/bundle && \
   git clone https://github.com/scrooloose/syntastic.git
 ```
+* `pwd` prints the working directory;
+* `pwd` prints the working directory;
+* `pwd` prints the working directory;
+* `pwd` prints the working directory;
+* `pwd` prints the working directory;
+* `pwd` prints the working directory;
+* `pwd` prints the working directory;
 
 Install vim-auto-save plugin and enable it on startup
 ```bash
@@ -123,7 +135,7 @@ docstub
 * move windows within the current workspace by holding down `alt-shift` while pressing either `j`, `k`, `l`, `;`, or any arrow-key(you rob i3 of its power by moving your hands off the homerow);
 * change workspaces by holding down `alt-<NUMBER>`, where `<NUMBER>` is a number-key;
 * move the current window to a workspace by holding down `alt-shift-<NUMBER>`, where `<NUMBER>` is a number-key;
-* many people do web browsing on one workspace, email on a second workspace, and work on a third workspace(it is nice to leave a set of windows open, do something else, and later instantly return to the original set of windows); and
+* many people dVim's diff3o web browsing on one workspace, email on a second workspace, and work on a third workspace(it is nice to leave a set of windows open, do something else, and later instantly return to the original set of windows); and
 * learn to use the keyboard rather than the mouse where possible and you'll experience great efficiency gains(before you know it, you will be the "wizard" who amazes others with flurries of wondrous keyboard-computing!)
 
 ### Use Git for Distributed Version Control
@@ -136,7 +148,7 @@ Setup the minimal configuration info:
   * an example global ignore file that uses octocat's recommended miscelaneous-, tex-, and python-global-ignore files: `./config_files/.gitconfig_global`
 * Create a local [```.gitignore```](git-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
 
-#### Set Vim's diff3 as Git's Mergetool
+#### Set vimdiff as Git's Mergetool
 - configure git with the following commands(I added `--global` to original steps found here: http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/)
   - ```git config --global merge.tool vimdiff```
   - ```git config --global merge.conflictstyle diff3```
@@ -146,8 +158,8 @@ Setup the minimal configuration info:
 
 ### Become Powerful at the Command-Line:
 * most commands have usage of the form `commandName --flag argument`
-* `cd` changes the current directory;
 * `pwd` prints the working directory;
+* `cd` changes the current directory;
 * ```echo "all these words"``` prints out the string `all these words` to the screen;
 * `cat` prints the contents of a text file;
 * `head -n 5 oneFoo` prints the first 5 lines of file `oneFoo`;
@@ -224,5 +236,5 @@ keyboard shortcuts,
 keyboard navigation,
 driving a computer from the keyboard,
 
-#TODOC
-- introduce pmount and discuss its utility of allowing users to mount without a listing in /etc/fstab and without sudo
+#TODO
+- introduce pmount and motivate with the utility of allowing users to mount without a listing in /etc/fstab and without sudo
