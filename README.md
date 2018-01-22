@@ -1,7 +1,7 @@
 # workstationCreation
-This repo contains scripts to streamline workflows on an efficient Vlinux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
+This repo contains scripts to streamline workflows on an efficient linux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
 
-## Easily Run a Linux Workstation Alongside ChromeOS on a Chromebook!
+## Easily Install and Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
 1. Put the chromebook in developer-mode.
 2. Download crouton from https://goo.gl/fd3zc .
 3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing `shell`
@@ -54,19 +54,19 @@ $ su
 # echo "PS1='\[\e[0;31m\]\u\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[0;31m\]#\[\e[m\]\[\e[0;37m\] '" >> ~/.bashrc
 ```
 
-Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 with this script:
-`~/.bin/wallpaper-setter-script.sh`
-
+Place wallpapers in ~/.wallpaper and randomize wallpaper prior to loading i3 with `~/.bin/wallpaper-setter-script.sh`:
 ```bash
 #!sh
 feh --bg-max --randomize ~/.wallpaper/* &
 `https://github.com/wetlife/workstationCreation.git``
 ```
+### Get 256 colors in terminal:
+write a line in <readline.something> to set colors to 256. Also use any gui preference-editor in the chosen terminal emulator. Terminal settings don't allow setting 256 colors.
 
 ### Setup VIM:
 echo good initial settings into ~/.vimrc:
-```bash $
-echo 'syntax on
+```bash
+$ echo 'syntax on
 filetype plugin indent on
 set t_Co=256
 set whichwrap+=<,>,h,l,[,] " allow left/right nav. across newlines
@@ -79,7 +79,7 @@ set linebreak
 ```
 
 Get the wombat256mod colorscheme by downloading wombat256mod.vim from
-http://www.vim.org/scripts/script.php?script_id=2465
+[http://www.vim.org/scripts/script.php?script_id=2465].
 
 Shell:
 ```bash
@@ -106,13 +106,6 @@ Install the syntastic plugin:
 cd ~/.vim/bundle && \
   git clone https://github.com/scrooloose/syntastic.git
 ```
-* `pwd` prints the working directory;
-* `pwd` prints the working directory;
-* `pwd` prints the working directory;
-* `pwd` prints the working directory;
-* `pwd` prints the working directory;
-* `pwd` prints the working directory;
-* `pwd` prints the working directory;
 
 Install vim-auto-save plugin and enable it on startup
 ```bash
@@ -120,8 +113,6 @@ $ mkdir ~/.vim/bundle/vim-auto-save &&\
 curl git@github.com:vim-scripts/vim-auto-save.git > ~/.vim/bundle/vim-auto-save &&\
 echo 'let g:auto_save = 1 " enable AutoSave(from plugin vim-auto-save) on Vim startup' >> ~/.vimrc
 ```
-### Use and document plugin breakindent 
-docstub
 
 ## Use the Workflow.
 ### Manage windows with i3:
@@ -135,7 +126,8 @@ docstub
 * move windows within the current workspace by holding down `alt-shift` while pressing either `j`, `k`, `l`, `;`, or any arrow-key(you rob i3 of its power by moving your hands off the homerow);
 * change workspaces by holding down `alt-<NUMBER>`, where `<NUMBER>` is a number-key;
 * move the current window to a workspace by holding down `alt-shift-<NUMBER>`, where `<NUMBER>` is a number-key;
-* many people dVim's diff3o web browsing on one workspace, email on a second workspace, and work on a third workspace(it is nice to leave a set of windows open, do something else, and later instantly return to the original set of windows); and
+* one can browse the Web on one workspace, email on a second workspace, and work on other workspaces
+  * (it is nice to leave a set of windows open, do something else, and later instantly return to the original set of windows); and
 * learn to use the keyboard rather than the mouse where possible and you'll experience great efficiency gains(before you know it, you will be the "wizard" who amazes others with flurries of wondrous keyboard-computing!)
 
 ### Use Git for Distributed Version Control
@@ -148,13 +140,21 @@ Setup the minimal configuration info:
   * an example global ignore file that uses octocat's recommended miscelaneous-, tex-, and python-global-ignore files: `./config_files/.gitconfig_global`
 * Create a local [```.gitignore```](git-workstation-config) within each repository if it is desired to ignore a repo-specific-set of files and directories
 
-#### Set vimdiff as Git's Mergetool
 - configure git with the following commands(I added `--global` to original steps found here: http://www.rosipov.com/blog/use-vimdiff-as-git-mergetool/)
   - ```git config --global merge.tool vimdiff```
   - ```git config --global merge.conflictstyle diff3```
   - ```git config --global mergetool.prompt false```
 - From now on use the command `git mergetool` to resolve merge conflicts with vim using vim-commands of the form `:diffg[et] RE[MOTE]`
----
+
+### Write Technical Documents With $$\LaTeX$$ Like a Pro
+A pleasing and efficient workflow to typeset technical documents is laid out beautifully
+[here](http://dlpeterson.com/2013/08/latex-workflow/) by Dale Lukas Peterson.
+
+### Setup Git
+* Migrate settings via a file with the command `cp config-files/.gitconfig ~` .
+* Set global git parameters from the command-line:
+  * `$ git config --global user.name "NAME GOES HERE"`
+  * `$ git config --global user.email "EMAIL GOES HERE"`
 
 ### Become Powerful at the Command-Line:
 * most commands have usage of the form `commandName --flag argument`
@@ -237,4 +237,6 @@ keyboard navigation,
 driving a computer from the keyboard,
 
 #TODO
+- create a section for vim
+- create a section for git
 - introduce pmount and motivate with the utility of allowing users to mount without a listing in /etc/fstab and without sudo

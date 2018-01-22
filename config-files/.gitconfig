@@ -1,0 +1,21 @@
+[user]
+	name = Kyle Thomas
+	email = wetlife@gmail.com
+[push]
+	default = current
+[core]
+	excludesfile = C:/Users/KThom02/.gitignore
+	safecrlf = false
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gui]
+	recentrepo = C:/Users/kthom02/fegs-dashboard
+[credential]
+	helper = store
+[merge]
+	tool = vimdiff
+[branch "master"]
+  mergeoptions = --ff-only # avoid bad merges in trunk that should be cleaned and otherwise handled in a branch before sharing
