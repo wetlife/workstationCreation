@@ -13,12 +13,16 @@ colorscheme PaperColor
 "runtime macros/matchit.vim " jump between html tags
 set breakindent " match indentation of wrapped line with its continuation
 set linebreak " turn on line-wrapping without breaking words
-set briopt=shift:2 " indent wrapped lines by specified number of spaces
+"set briopt=shift:2 " indent wrapped lines by specified number of spaces
+set briopt=shift:0 sbr " indicate linewrap with showbreak
+set showbreak=>\  " show wrapped lines with this string after indent
 autocmd Filetype gitcommit setlocal spell textwidth=72 " check spelling and automate wrapping at 72 chars when editing git commit messages
-" view current buffer in Firefox by pressing F5:
-nnoremap <silent> <F5> :!start file://C:/Users/KThom02/AppData/Local/Firefox/Developer\ Edition/firefox.exe %:p<CR>
+" run `npm start` and send STDOUT and STDERR to ./logfile
+map <silent> <F4> :!date>>logfile && npm start &>>logfile &<CR>
+" view current buffer in Firefox by pressing F7:
+map <silent> <F5> :!start file://C:/Users/KThom02/AppData/Local/Firefox/Developer\ Edition/firefox.exe %:p<CR>
 " view current buffer in Chrome by pressing F6:
-nnoremap <silent> <F6> :!start file://C:/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe %:p<CR>
+map <silent> <F6> :!start file://C:/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe %:p<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set runtimepath+=~/.vim/bundle/jshint2.vim/
 " integrate eslint using syntastic via vim-plug
