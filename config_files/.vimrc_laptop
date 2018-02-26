@@ -9,7 +9,7 @@ syntax enable " color syntax
 "set background=dark " set a dark background
 "colorscheme wombat256mod
 "colorscheme monokai
-colorscheme PaperColor
+"PAPERCOLOR NOT DOWNLOADED ON THIS WORKSTATION colorscheme PaperColor
 "runtime macros/matchit.vim " jump between html tags
 set breakindent " match indentation of wrapped line with its continuation
 set linebreak " turn on line-wrapping without breaking words
@@ -37,10 +37,10 @@ set runtimepath+=~/.vim/bundle/jshint2.vim/
 "COMMENTEDlet g:syntastic_check_on_wq = 0
 "COMMENTEDlet g:syntastic_javascript_checkers = ['eslint', 'eslint-plugin-html']
 "COMMENTEDlet g:syntastic_javascript_eslint_exe = 'npm run lint --'
-call plug#begin('~/.vim/plugins_by_vimplug')
-"Plug 'scrooloose/syntastic'
-Plug 'mhinz/vim-signify'
-call plug#end()
+"UNCOMMENT TO USE VIM-SIGNIFY call plug#begin('~/.vim/plugins_by_vimplug')
+"UNCOMMENT TO USE VIM-SIGNIFY   "Plug 'scrooloose/syntastic'
+"UNCOMMENT TO USE VIM-SIGNIFY   Plug 'mhinz/vim-signify'
+"UNCOMMENT TO USE VIM-SIGNIFY call plug#end()
 "autocmd FileType html
 "  \  let b:syntastic_checkers = ['eslint'] |
 "  \  let b:syntastic_html_eslint_args = ['--plugin', 'html'] 
