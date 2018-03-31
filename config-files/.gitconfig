@@ -17,5 +17,4 @@
 	helper = store
 [merge]
 	tool = vimdiff
-[branch "master"]
-  mergeoptions = --ff-only # avoid bad merges in trunk that should be cleaned and otherwise handled in a branch before sharing
+  mergeoptions = --no-ff # force new commit for every merge
