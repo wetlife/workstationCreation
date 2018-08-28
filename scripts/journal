@@ -1,8 +1,8 @@
 #!/bin/bash
 # author:kyle thomas
-# USAGE: $journal [TOPIC_NAME1 TOPIC_NAME2 ..]
-JOURNAL="/home/thomasky/journal/contents.tex"
-echo "" >> $JOURNAL
-echo "\\section*{ `/usr/local/bin/kydate` }" >> $JOURNAL
-echo "\\subsection*{ ${@:1} }" >> $JOURNAL
-vim $JOURNAL
+# usage: $journal [topic_name1 topic_name2 ..]
+journal="/home/thomasky/journal/contents.tex"
+echo "" >> $journal
+echo "\\section*{ `/usr/local/bin/kydate` }" >> $journal
+echo "\\subsection*{ ${@:1} }" >> $journal
+vim $journal
