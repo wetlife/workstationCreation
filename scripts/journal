@@ -1,8 +1,11 @@
 #!/bin/bash
 # author:kyle thomas
 # usage: $journal [topic_name1 topic_name2 ..]
-journal="/home/thomasky/journal/contents.tex"
+journal="/home/wetlife/journal/contents.tex"
+original_dir="$(pwd)"
 echo "" >> $journal
 echo "\\section*{ `/usr/local/bin/kydate` }" >> $journal
 echo "\\subsection*{ ${@:1} }" >> $journal
+cd ${journal%/*}
 vim $journal
+cd $original_dir
