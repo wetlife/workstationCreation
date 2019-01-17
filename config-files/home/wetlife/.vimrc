@@ -6,8 +6,8 @@ set laststatus=2 " always show status
 filetype indent on " indent based on filetype
 set pastetoggle=<F2> " toggle a literal pasting without automatic indentation
 syntax enable " color syntax
-colorscheme default
 set background=light
+colorscheme evening " USE WITH terminal colorscheme named faint-dark
 "colorscheme wombat256mod
 "colorscheme monokai
 "PAPERCOLOR NOT DOWNLOADED ON THIS WORKSTATION colorscheme PaperColor
@@ -52,3 +52,4 @@ set tabstop=4 " show existing tab with width of 4 spaces
 set shiftwidth=4 " when indenting with '>', use 4 spaces width
 set expandtab " insert 4 spaces when tab is pressed
 """"""" END TAB-KEY BEHAVIOR
+map <F3> :!go run %<CR>
