@@ -1,11 +1,13 @@
 # workstationCreation
-This repo contains scripts to streamline workflows on an efficient linux workstation using git, latexmk, and vim. This README.md lists steps to configure the requisite software for using the workflow as well as the workflow. Steps are listed in the order I take them.
+This repo contains scripts image a machine which streamline workflows on an efficient linux workstation using bash, git, latexmk, and vim.
+This README.md lists steps to configure the requisite software for using the workflow as well as the workflow.
+Steps are listed in the order I take them.
 
-## Easily Install and Run a Linux Workstation on Alongside ChromeOS on a Chromebook!
+## Easily Install and Run a Linux Workstation Alongside ChromeOS on a Chromebook
 1. Put the chromebook in developer-mode.
-2. Download crouton from https://goo.gl/fd3zc .
-3. Enter the shell(AKA the terminal or the command-line) by pressing control-alt-t and typing `shell`
-4. Change directory(cd) to your Downloads folder (because that's where crouton downloads to):`$ cd ~/Downloads`
+2. Download crouton from [https://goo.gl/fd3zc].
+3. Open ChromeOS's shell by pressing control-alt-t and typing `shell`
+4. Change directory to your Downloads folder (because that's where crouton downloads to):`$ cd ~/Downloads`
 5. Install a nicely packaged chroot-environment that runs alongside ChromeOS: `sh -e ./crouton -r trusty -t lxde`
   - available releases are listed when the following command is entered at chrome's shell: `sh -e crouton -r list`
   - available targets are listed when the following command is entered at chrome's shell: `sh -e ./crouton -t list`
@@ -15,13 +17,13 @@ This repo contains scripts to streamline workflows on an efficient linux worksta
 
 ## Install Useful Software
 ### for Debian, Ubuntu, and Mint:
-Install my most useful software with apt-get:
+Install useful software with apt:
 ```bash
 $ sudo apt-get update; sudo apt-get install git curl i3 dmenu texlive sshfs feh rsync texlive-publisher texlive-math-extra texlive-latex-recommended texlive-xelatex latexmk biber evince
 ```
 
 ### for Arch:
-Install my most useful software with pacman:
+Install useful software with pacman:
 ```bash
 $ sudo pacman -Sy i3 vim evince git dmenu xorg lxterminal alsa-tools texlive-most python python-numpy python-matplotlib ipython
 ```
@@ -38,7 +40,7 @@ set $term = lxterminal
 
 #### Use Readline with Keybindings from Vi Rather than Emacs
 Use the following commands to use vi-mode when entering commands. The first command sets the sysem-wide default behavior, but requires root priveleges to execute. The second command sets the current user's default behavior of readline.
-1. `cp /etc/inputrc . && echo 'set editing-mode vi' >> inputrc && sudo mv inputrc /etc/`
+1. `cp /etc/inputrc /tmp/ && echo 'set editing-mode vi' >> inputrc && sudo mv /tmp/inputrc /etc/`
 2. `echo 'set editing-mode vi' >> ~/.inputrc`
 3. press <CTRL><x><CTRL><r> to reload inputrc
 
@@ -251,7 +253,7 @@ Executive Summary:
 ## driving a web browser efficiently
 - `<ctrl>-l` selects the address bar
 - `<ctrl>-l`, `wikipedia`, then `<ctrl>-<enter>` goes to www.wikipedia.com.
-- `<alt>-<left arrow>` or sometimes `<backspace>` goes back in history
+- `<alt>-<left arrow>`, `<ctrl>-[`, or sometimes `<backspace>` goes back in history
 
 ## Use Vimium to Browse the Internet Efficiently
 Vimium is a Firefox, Chrome, and chromium extension that provides a vim-like, homerow-driven interface to a graphical web-browser. Compose commands to program the browser as one programs an editor. Set the browser to scroll smoothly to ride a web of fluid text.

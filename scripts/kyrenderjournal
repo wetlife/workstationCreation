@@ -2,6 +2,6 @@
 # USAGE: $ kyrenderjournal
 # SYNOPSIS: change into journal dir and render journal live w/ latexmk
 echo "changing into journal directory"
-cd /home/thomasky/Downloads/journal
-echo "compiling journal live and rendering in default pdf viewer"
+cd /home/$USER/journal
+echo "compile, view, and hot-reload on change"
 latexmk -pvc -pdf journal.tex

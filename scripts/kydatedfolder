@@ -1,4 +1,12 @@
 #!/bin/sh
-FOLDER_NAME="`kydate`-$1"
+if [ -nz $1 ]
+then
+	DIRSUFFIX='dir'
+else
+	DIRSUFFIX=$1
+fi
+FOLDER_NAME="`date +%Y.%m.%dat%H.%M.%S`-$DIRSUFFIX"
+echo '$FOLDER_NAME:'
+echo $FOLDER_NAME
 mkdir $FOLDER_NAME
 cd $FOLDER_NAME

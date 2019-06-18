@@ -1,2 +1,1 @@
-#!/bin/bash
-xinput --disable 11
+synclient TouchpadOff=1

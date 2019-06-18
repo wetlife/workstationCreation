@@ -1,11 +1,9 @@
 #!/bin/bash
-# author: kyle thomas
-# Kyle Thomas: "Hashtags is a language!"
+# author: Kyle Thomas
 # USAGE: $blah <word1>[, <word2>,..., <wordN>]
-# EXAMPLE: $blah coolThingToSay 
 #JOURNAL="./tempJournalTestFile"
 JOURNAL="/home/wetlife/journal/contents.tex"
 echo "" >> $JOURNAL
-echo "\\section*{ `/usr/local/bin/kydate` }" >> $JOURNAL
+echo "\\section*{ `kydate` }" >> $JOURNAL
 echo "\\subsection*{ #writtenWithBlahScript }" >> $JOURNAL
-echo "${@:1}" >> $JOURNAL
+echo "${@1}" >> $JOURNAL

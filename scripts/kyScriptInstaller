@@ -1,4 +1,12 @@
-#!/bin/sh
-#author: kyle thomas
-sudo chmod 755 ./*
-sudo cp ./* /usr/local/bin/
+#!/bin/bash
+# AUTHOR: kyle thomas
+# LICENSE: GPLv3
+INSTALL_PATH="/usr/local/bin/"
+echo;echo
+read -p "Copy scripts into ${INSTALL_PATH} to be in PATH for all users?" -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+	sudo cp -s -i -r -v . /usr/local/bin/
+else
+	echo "No files were copied."
+fi

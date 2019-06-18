@@ -1,2 +1,0 @@
-#!/bin/sh
-synclient HorizHysteresis=45 VertHysteresis=45 VertEdgeScroll=0 FingerLow=30 FingerHigh=40 MaxTapTime=0 PalmDetect=1 PalmMinWidth=8 PalmMinZ=50
