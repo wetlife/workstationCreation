@@ -73,11 +73,7 @@ echo good initial settings into ~/.vimrc:
 ```bash
 $ echo 'syntax on
 filetype plugin indent on
-set t_Co=256
-set whichwrap+=<,>,h,l,[,] " allow left/right nav. across newlines
 set number " enable line-numbering' >> ~/.vimrc
-set t_Co=256
-set ts=2 sw=2
 set bri
 set showbreak=>>
 set linebreak
@@ -93,30 +89,10 @@ curl http://www.vim.org/scripts/download_script.php?src_id=13400 > ~/.vim/wombat
 echo 'colorscheme wombat256mod " set a nice colorscheme' >> ~/.vimrc
 ```
 
-Install vim's pathogen plugin manager:
-```bash
-$ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-  curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-$ echo 'execute pathogen#infect()' >> ~/.vimrc
-```
-
 install the vim-airline plugin from the shell:
 ```bash
 git clone https://github.com/bling/vim-airline ~/.vim/bundle/vim-airline
 echo 'set laststatus=2' >> ~/.vimrc
-```
-
-Install the syntastic plugin:
-```bash
-cd ~/.vim/bundle && \
-  git clone https://github.com/scrooloose/syntastic.git
-```
-
-Install vim-auto-save plugin and enable it on startup
-```bash
-$ mkdir ~/.vim/bundle/vim-auto-save &&\
-curl git@github.com:vim-scripts/vim-auto-save.git > ~/.vim/bundle/vim-auto-save &&\
-echo 'let g:auto_save = 1 " enable AutoSave(from plugin vim-auto-save) on Vim startup' >> ~/.vimrc
 ```
 
 ## Use the Workflow.
