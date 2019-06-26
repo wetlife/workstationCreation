@@ -226,12 +226,21 @@ Executive Summary:
 - `r` replaces a selection or any character under the cursor with something
 - `s` substitutes an arbitrary string of text for the selection or the character under the cursor
 
+### set resolution to half the size of hd 1080 in each dimension:
+`xrandr -s 960x540`
+
+### set brightness:
+`xrandr --output eDP-1 --brightness .5`
+
+### Use mplayer to effect picture-in-picture:
+`mplayer tv:// -tv driver=v4l2:width=400:height=300 -vo picture-in-picture -geometry 100%:100% -noborder &> /tmp/picture-in-picture-`date +%Y.%m.%dat%H.%M.%S`.log`
+
 ## driving a web browser efficiently
 - `<ctrl>-l` selects the address bar
 - `<ctrl>-l`, `wikipedia`, then `<ctrl>-<enter>` goes to www.wikipedia.com.
 - `<alt>-<left arrow>`, `<ctrl>-[`, or sometimes `<backspace>` goes back in history
 
-## Use Vimium to Browse the Internet Efficiently
+### Use Vimium to Browse the Internet Efficiently
 Vimium is a Firefox, Chrome, and chromium extension that provides a vim-like, homerow-driven interface to a graphical web-browser. Compose commands to program the browser as one programs an editor. Set the browser to scroll smoothly to ride a web of fluid text.
 - composing commands is the interface as it is in vi(m)
 - `j` down
