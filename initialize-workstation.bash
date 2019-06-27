@@ -244,7 +244,7 @@ read -p 'apt update and install software?' -n 1 -r
 echo
 if [[ $REPLY =~ ^[yY]$ ]]
 then
-	SOFTWARE_LIST='i3 gccgo-go latexmk texlive{,-publishers,-science,-music} zathura'
+	SOFTWARE_LIST='i3 gccgo-go latexmk texlive texlive-publishers texlive-science texlive-music zathura'
 	echo Software to be installed: $SOFTWARE_LIST.
 	read -p 'Enter custom list of software to install?' -n 1 -r
 	echo
