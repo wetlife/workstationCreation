@@ -74,9 +74,15 @@ fi
 #################
 # rsync scripts #
 #################
-if [ ! -d ~/.bin ]; then
-	echo mkdir -p ~/.bin
-	mkdir -p ~/.bin
+RSYNC_CMD="rsync -vurt $SCRIPT_DIR/scripts/ $HOME/bin"
+echo files to be synchronized:
+rsync -vurtn $SCRIPT_DIR/scripts/ $HOME/bin
+read -p "$RSYNC_CMD? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[yY]$ ]]
+then
+	echo $RSYNC_CMD':'
+	$RSYNC_CMD
 fi
 
 ###################################
