@@ -1,11 +1,11 @@
 #!/bin/bash
 # author:kyle thomas
 # usage: $journal [topic_name_1 [... topic_name_N]]
-journal="/home/wetlife/journal/contents.tex"
+journal="/home/wetlife/Documents/journal/contents.tex"
 original_dir="$(pwd)"
 # write a uniform label for this journal-entry
 echo "" >> $journal
-echo "\\section*{ `/usr/local/bin/kydate` }" >> $journal
+echo "\\section*{ `date +%Y.%m.%dat%H.%M.%S` }" >> $journal
 echo "\\subsection*{ ${@:1} }" >> $journal
 # cd into journal's dir so swap files remain there
 #   thus if swap files exist then user will be notified
