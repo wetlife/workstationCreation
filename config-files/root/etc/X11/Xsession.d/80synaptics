@@ -1,4 +1,4 @@
 # Author: Kyle Thomas
 # License: GPLv3
 
-synclient MaxTapTime=0 VertEdgeScroll=0 FingerHigh=25 FingerLow=10 LeftEdge=535 RightEdge=2630 PalmDetect=1
+synclient MaxTapTime=0 VertEdgeScroll=0 VertTwoFingerScroll=1 VertScrollDelta=100 {Vert,Horiz}Hysteresis=50 FingerHigh=25 FingerLow=10 AreaLeftEdge=1000 AreaRightEdge=2500 PalmDetect=1
