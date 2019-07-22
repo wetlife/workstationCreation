@@ -1,4 +1,23 @@
 # Author: Kyle Thomas
 # License: GPLv3
 
-synclient MaxTapTime=0 VertEdgeScroll=0 VertTwoFingerScroll=1 VertScrollDelta=100 {Vert,Horiz}Hysteresis=50 FingerHigh=25 FingerLow=10 AreaLeftEdge=1000 AreaRightEdge=2500 PalmDetect=1
+# config from command-line:
+# synclient MaxTapTime=0 VertEdgeScroll=0 VertTwoFingerScroll=1 VertScrollDelta=20 {Vert,Horiz}Hysteresis=20 FingerHigh=25 FingerLow=10 AreaLeftEdge=1000 AreaRightEdge=2500 PalmDetect=1 CoastingSpeed=0
+
+Section "InputClass"
+	Identifier	"Touchpad"	# required
+	MatchIsTouchpad	"yes"		# required
+	Driver		"synaptics"	# required
+	Option		"MaxTapTime"		"0"
+	Option		"VertEdgeScroll"	"0"
+	Option		"VertTwoFingerScoll"	"1"
+	Option		"VertScrollDelta"	"20"
+	Option		"VertHysteresis"	"20"
+	Option		"HorizHysteresis"	"20"
+	Option		"FingerHigh"		"25"
+	Option		"FingerLow"		"10"
+	Option		"AreaLeftEdge"		"1000"
+	Option		"AreaRightEdge"		"2500"
+	Option		"PalmDetect"		"1"
+	Option		"CoastingSpeed"		"0"
+EndSection
