@@ -2,7 +2,7 @@
 # License: GPLv3
 
 # config from command-line:
-# synclient MaxTapTime=0 VertEdgeScroll=0 VertTwoFingerScroll=1 VertScrollDelta=20 {Vert,Horiz}Hysteresis=20 FingerHigh=25 FingerLow=10 AreaLeftEdge=1000 AreaRightEdge=2500 PalmDetect=1 CoastingSpeed=0
+# synclient MaxTapTime=0 VertEdgeScroll=0 VertTwoFingerScroll=1 VertScrollDelta=20 {Vert,Horiz}Hysteresis=20 FingerHigh=25 FingerLow=10 AreaLeftEdge=1000 AreaRightEdge=2500 CoastingSpeed=0
 
 Section "InputClass"
 	Identifier	"Touchpad"	# required
@@ -18,6 +18,5 @@ Section "InputClass"
 	Option		"FingerLow"		"10"
 	Option		"AreaLeftEdge"		"1000"
 	Option		"AreaRightEdge"		"2500"
-	Option		"PalmDetect"		"1"
 	Option		"CoastingSpeed"		"0"
 EndSection
