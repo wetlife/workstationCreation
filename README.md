@@ -236,6 +236,8 @@ Executive Summary:
 Float picture-in-picture with i3 by pressing `$mod+Shift+Space`. Reposition a floated window with i3 by pressing `$mod+Shift+<j|k|l|;|LeftArrow|DownArrow|UpArrow|RightArrow>`.
 #### using mplayer:
 `mplayer tv:// -tv driver=v4l2:width=400:height=300 -vo xv -geometry 100%:100% -noborder &> /tmp/picture-in-picture-$(date +%Y.%m.%dat%H.%M.%S).log`
+#### using mpv:
+`mpv --ontop --no-border --autofit=384x216 --geometry=99%:2% /dev/video0`
 
 ## driving a web browser efficiently
 - `<ctrl>-l` selects the address bar
