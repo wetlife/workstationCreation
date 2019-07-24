@@ -233,7 +233,7 @@ Executive Summary:
 `xrandr --output eDP-1 --brightness .5`
 
 ### Use mplayer to effect picture-in-picture:
-`mplayer tv:// -tv driver=v4l2:width=400:height=300 -vo picture-in-picture -geometry 100%:100% -noborder &> /tmp/picture-in-picture-`date +%Y.%m.%dat%H.%M.%S`.log`
+`mplayer tv:// -tv driver=v4l2:width=400:height=300 -vo xv -geometry 100%:100% -noborder &> /tmp/picture-in-picture-$(date +%Y.%m.%dat%H.%M.%S).log`
 
 ## driving a web browser efficiently
 - `<ctrl>-l` selects the address bar
@@ -255,8 +255,11 @@ Vimium is a Firefox, Chrome, and chromium extension that provides a vim-like, ho
 
 #TODO
 =====
-- create a section for git
 - introduce pmount and the utility of mounting without either an entry in /etc/fstab or sudo
+- present an example screencasting workflow
+- introduce the linux, GNU, BSD, and UNIX programming environment
+- introduce the node.js environment
+- introduce the python environment
 
 Tags: 
 linux,
