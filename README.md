@@ -232,7 +232,9 @@ Executive Summary:
 ### set brightness:
 `xrandr --output eDP-1 --brightness .5`
 
-### Use mplayer to effect picture-in-picture:
+### create picture-in-picture of webcam
+Float picture-in-picture with i3 by pressing `$mod+Shift+Space`. Reposition a floated window with i3 by pressing `$mod+Shift+<j|k|l|;|LeftArrow|DownArrow|UpArrow|RightArrow>`.
+#### using mplayer:
 `mplayer tv:// -tv driver=v4l2:width=400:height=300 -vo xv -geometry 100%:100% -noborder &> /tmp/picture-in-picture-$(date +%Y.%m.%dat%H.%M.%S).log`
 
 ## driving a web browser efficiently
