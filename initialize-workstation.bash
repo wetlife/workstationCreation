@@ -297,6 +297,22 @@ then
 fi
 echo
 
+############################
+## install gcloud with apt #
+############################
+read -p 'Install gcloud with apt, use a browser to sign in with google, and configure gcloud?' -n 1 -r
+echo
+if [[ $REPLY =~ ^[yY]$ ]]
+then
+	echo Installing gcloud with apt:
+	echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+	sudo apt-get install apt-transport-https ca-certificates
+	curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+	sudo apt-get update && sudo apt-get install google-cloud-sdk
+	gcloud init
+fi
+echo
+
 #########################
 ## ensure ~/bin in PATH # TODO
 #########################
