@@ -70,6 +70,7 @@ then
 	echo $RSYNC_CMD':'
 	$RSYNC_CMD
 fi
+echo
 
 #################
 # rsync scripts #
@@ -84,6 +85,7 @@ then
 	echo $RSYNC_CMD':'
 	$RSYNC_CMD
 fi
+echo
 
 ###################################
 ## editing-mode and keymap get vi #
@@ -160,6 +162,7 @@ else
 		tail ~/.inputrc; echo
 	fi
 fi
+echo
 
 #####################################################
 ## set default editor for readline and various apps #
@@ -170,16 +173,40 @@ if grep -Fsq $VISUAL_GETS_VIM ~/.bashrc
 then
 	echo ~/.bashrc contains '"'$VISUAL_GETS_VIM'"'
 else
-	read -p "echo $VISUAL_GETS_VIM >> ~/.bashrc?" -n 1 -r
+	read -p "echo export $VISUAL_GETS_VIM >> ~/.bashrc?" -n 1 -r
 	echo
 	if [[ $REPLY =~ ^[yY]$ ]]
 	then
-		echo $VISUAL_GETS_VIM >> ~/.bashrc
-		echo tail of ~/.bashrc:
-		echo
-		tail ~/.bashrc
+		echo >> ~/.bashrc
+		echo "# set VISUAL as preferred specification of editor" >> ~/.bashrc
+		echo export $VISUAL_GETS_VIM >> ~/.bashrc
+		echo tail -2 of ~/.bashrc:
+		tail -2 ~/.bashrc
 	fi
 fi
+echo
+
+############################################
+# EDITOR is used by git and perhaps others #
+############################################
+EDITOR_GETS_VIM="EDITOR="
+#ask_act_verify(EDITOR_GETS_VIM, "grep -F 'VISUAL=' ~/.bashrc")
+if grep -Fsq $EDITOR_GETS_VIM ~/.bashrc
+then
+	echo ~/.bashrc contains '"'$EDITOR_GETS_VIM'"'
+else
+	read -p "echo $EDITOR_GETS_VIM >> ~/.bashrc?" -n 1 -r
+	echo
+	if [[ $REPLY =~ ^[yY]$ ]]
+	then
+		echo >> ~/.bashrc
+		echo "# set EDITOR for git and perhaps other apps" >> ~/.bashrc
+		echo "export "$EDITOR_GETS_VIM'$VISUAL' >> ~/.bashrc
+		echo tail -2 of ~/.bashrc:
+		tail -2 ~/.bashrc
+	fi
+fi
+echo
 
 ##################
 ## configure git #
@@ -205,6 +232,7 @@ then
 	git config --global user.email $REPLY
 	echo git email is $(git config --get-all user.email)
 fi
+echo
 
 ############################
 #### SUDO REQUIRED BELOW ###
@@ -228,6 +256,7 @@ then
 echo sudo cp $SCRIPT_DIR/config-files/root/etc/X11/Xsession.d/80synaptics /etc/X11/Xsession.d/
 sudo cp $SCRIPT_DIR/config-files/root/etc/X11/Xsession.d/80synaptics /etc/X11/Xsession.d/
 fi
+echo
 
 ###############################
 # download and install vscode #
@@ -242,6 +271,7 @@ then
 	echo ' 3. Run `sudo apt-get install -f` but nothing should need fixed,  #'
 	echo '###################################################################'
 fi
+echo
 
 ##################################
 ## install applications with apt #
@@ -265,6 +295,7 @@ then
 	echo sudo apt install $SOFTWARE_LIST
 	sudo apt install $SOFTWARE_LIST
 fi
+echo
 
 #########################
 ## ensure ~/bin in PATH # TODO
