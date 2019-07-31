@@ -313,6 +313,27 @@ then
 fi
 echo
 
+##########################
+## install r and rstudio #
+##########################
+read -p 'Install r, install rstudio, add current user to group staff to let rstudio install packages to /usr/local/lib/R/?' -n 1 -r
+echo
+if [[ $REPLY =~ ^[yY]$ ]]
+then
+	echo Instructions for this procedure are from url
+	echo https://askubuntu.com/questions/919275/installing-rstudio-is-this-very-different-from-other-packages#answer-919288
+	echo
+	echo Installing r-base, r-base-dev, and their dependencies with apt:
+	sudo apt-get install r-base r-base-dev
+	echo Prefer installing r-packages with '`sudo apt install r-cran-<package>`'.
+	read -p 'Go to https://www.rstudio.com/products/rstudio/#Desktop and download the rstudio .deb file then press y to add the current user to group staff so that rstudio may install packages to /usr/local/lib/R/.' -n 1 -r
+	if [[ $REPLY =~ ^[yY]$ ]]
+	then
+		sudo adduser $USER staff
+	fi
+fi
+echo
+
 #########################
 ## ensure ~/bin in PATH # TODO
 #########################
