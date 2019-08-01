@@ -326,7 +326,11 @@ then
 	echo Installing r-base, r-base-dev, and their dependencies with apt:
 	sudo apt-get install r-base r-base-dev
 	echo Prefer installing r-packages with '`sudo apt install r-cran-<package>`'.
-	read -p 'Go to https://www.rstudio.com/products/rstudio/#Desktop and download the rstudio .deb file then press y to add the current user to group staff so that rstudio may install packages to /usr/local/lib/R/.' -n 1 -r
+	echo
+	echo Manual steps:
+	echo 1. Go to https://www.rstudio.com/products/rstudio/#Desktop and download the rstudio .deb file.
+	echo '2. Run `dpkg -i <path/to/rstudio-X.Y.Z-amd64.deb> && sudo apt install -f`.'
+	read -p '3. Press y to add the current user to group staff so that rstudio may install packages to /usr/local/lib/R/.' -n 1 -r
 	if [[ $REPLY =~ ^[yY]$ ]]
 	then
 		sudo adduser $USER staff
