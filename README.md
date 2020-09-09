@@ -38,7 +38,7 @@ just under the line "set $mod = Mod1", add this line:
 set $term = lxterminal
 ```
 
-#### Use Readline with Keybindings from Vi Rather than Emacs
+#### Use Readline with Keybindings from Vi
 Use the following commands to use vi-mode when entering commands. The first command sets the sysem-wide default behavior, but requires root priveleges to execute. The second command sets the current user's default behavior of readline.
 1. `cp /etc/inputrc /tmp/ && echo 'set editing-mode vi' >> inputrc && sudo mv /tmp/inputrc /etc/`
 2. `echo 'set editing-mode vi' >> ~/.inputrc`

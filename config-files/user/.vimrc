@@ -2,9 +2,11 @@
 "set whichwrap+=<,>,h,l,[,] " allow left/right nav. across newlines
 set number " enable line-numbering
 set laststatus=2 " always show status
+filetype on
 filetype indent on " indent based on filetype
 set pastetoggle=<F2> " toggle literal pasting without automatic indentation
 syntax enable " color syntax
+set tabstop=4 shiftwidth=4 expandtab
 colorscheme zellner
 set background=dark
 " disable highlighting implemented below with :hi clear Comment
