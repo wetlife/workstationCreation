@@ -257,6 +257,14 @@ Vimium is a Firefox, Chrome, and chromium extension that provides a vim-like, ho
 - `yy` yank current url
 - `?` show help
 
+## Easily Enter Web-Development
+### install the web-server'
+`npm i -g browser-sync`
+### launch a hot-reloaded Web-server in the current directory
+`browser-sync start -s -f . --no-notify --host 127.0.0.1 --port 9000 --browser firefox &>server.log &`
+### launch an outward-facing Web-server in the current directory at the current ip-address
+`browser-sync start -s -f . --no-notify --host $(hostname -I | awk '{print $1}') --port 9000 --browser firefox &>server.log &`
+
 #TODO
 =====
 - introduce pmount and the utility of mounting without either an entry in /etc/fstab or sudo
