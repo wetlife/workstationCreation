@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta lang="en">
+        <title>TITLE</title>
+        <style>
+
+            body {
+                font-family: math;
+                font-weight: bolder;
+                font-size: larger;
+                background-color: #f2eecb;
+                /*background-color: black;*/
+                text-shadow: 0 .5px 1px black;
+                color: #383b3e;
+            }
+
+            h1,h2,h3,h4,h5,h6 {
+                background-color: red;
+                font-family: monospace;
+                color: black;
+                text-shadow: 0px 0px .05em lime;
+                font-weight: bolder;
+                animation: typing 3s steps(30, end), blinking-cursor .3s step-end infinite;
+            }
+
+            @keyframes typing {
+                from {
+                    width: 0
+                }
+                to {
+                    width: 100%
+                }
+            }
+            
+            @keyframes blinking-cursor {
+                from {
+                    width: 0
+                }
+                to {
+                    width: 100%
+                }
+            }
+            
+
+            pre {
+                font-family: courier;
+                color: grey;
+            }
+
+            code {
+                font-family: courier;
+                color: #876;
+                    background-color: lightcyan;
+                text-shadow: 0px 2px 0 rgba(0, 0, 0, .5),
+                             0   1px 0 grey;
+            }
+
+            span {
+                color: tomato;
+            }
+
+        </style>
+        <link rel="stylesheet" src="style.css">
+    </head>
+    <body>
+        <h1>Display types</h1>
+
+        <h2>HTML</h2>
+        word <span>one</span><br>
+        1234 !!!<br>
+        !@#$ now<br>
+        Hello, World!
+
+        <h2>pre</h2>
+        <pre>
+            word <span>one</span><br>
+            1234 !!!<br>
+            !@#$ now<br>
+            Hello, World!
+        </pre>
+
+        <h2>code</h2>
+        <code>
+            word <span>one</span><br>
+            1234 !!!<br>
+            !@#$ now<br>
+            Hello, World!
+        </code>
+
+    </body>
+</html>
