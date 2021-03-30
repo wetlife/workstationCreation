@@ -2,26 +2,23 @@
 <html>
     <head>
         <meta lang="en">
-        <title>TITLE</title>
+        <title>Minimal HTML-document with Stylish Innovation</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
         <style>
 
-            body {
-                font-family: math;
-                font-weight: bolder;
-                font-size: larger;
-                background-color: #f2eecb;
-                /*background-color: black;*/
-                text-shadow: 0 .5px 1px black;
-                color: #383b3e;
+            :root {
+                --typewriter-ink-color: #383b3e;
+                --aged-paper-color: #f2eecb;
             }
 
-            h1,h2,h3,h4,h5,h6 {
-                background-color: red;
-                font-family: monospace;
-                color: black;
-                text-shadow: 0px 0px .05em lime;
+            body {
+                font-family: 'Special Elite', courier, monospace, times;
                 font-weight: bolder;
-                animation: typing 3s steps(30, end), blinking-cursor .3s step-end infinite;
+                font-size: larger;
+                background-color: var(--aged-paper-color, #f2eecb);
+                /*background-color: black;*/
+                color: var(--typewriter-ink-color, #383b3e);
             }
 
             @keyframes typing {
@@ -44,27 +41,27 @@
             
 
             pre {
-                font-family: courier;
-                color: grey;
+                color: var(--typewriter-ink-color, #383b3e);
             }
 
             code {
                 font-family: courier;
-                color: #876;
-                    background-color: lightcyan;
-                text-shadow: 0px 2px 0 rgba(0, 0, 0, .5),
-                             0   1px 0 grey;
+                color: var(--typewriter-ink-color, #383b3e);
             }
 
-            span {
+            span, a {
                 color: tomato;
+                animation: typing 3s steps(30, end), blinking-cursor .3s step-end infinite;
             }
 
         </style>
         <link rel="stylesheet" src="style.css">
     </head>
     <body>
-        <h1>Display types</h1>
+        <header>
+            <a href="http://www.truthforce.net">truthforce.net</a>
+            <h1>Display types</h1>
+        </header>
 
         <h2>HTML</h2>
         word <span>one</span><br>
@@ -74,19 +71,22 @@
 
         <h2>pre</h2>
         <pre>
-            word <span>one</span><br>
-            1234 !!!<br>
-            !@#$ now<br>
+            word <span>one</span><br />
+            1234 !!!<br />
+            !@#$ now<br />
             Hello, World!
         </pre>
 
         <h2>code</h2>
         <code>
-            word <span>one</span><br>
-            1234 !!!<br>
-            !@#$ now<br>
+            word <span>one</span><br />
+            1234 !!!<br />
+            !@#$ now<br />
             Hello, World!
         </code>
+
+        <h2>graphics</h2>
+        <button id="loadD3">Load D3 Example</button>
 
     </body>
 </html>

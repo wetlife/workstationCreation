@@ -1,0 +1,1 @@
+time (vim -O typed-as-tutor faraday-chemical-history-of-a-candle.txt) &>> typing-stats && wc typed-as-tutor >> typing-stats && cat typing-stats
