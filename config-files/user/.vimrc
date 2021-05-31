@@ -19,8 +19,10 @@ set briopt=shift:2,sbr "  indent wrapped lines by specified number of spaces
 set showbreak=>> " indicate wrapped lines with this string
 """"""" END WRAPPING BEHAVIOR
 autocmd Filetype gitcommit setlocal spell textwidth=72 " check spelling and automate wrapping at 72 chars when editing git commit messages
+autocmd Filetype make setlocal noet " makefiles indent with tabs
 " TODO FIXME CREATE FILETYPE-DEPENDENT-EXECUTION-HOTKEYS
 " run `npm start` and send STDOUT and STDERR to ./logfile
+map <F1> :!make<CR>
 map <F3> :!go run %<CR>
 map <silent> <F4> :!date>>logfile && npm start &>>logfile &<CR>
 " WINDOWS: view current buffer in Firefox by pressing F7:
