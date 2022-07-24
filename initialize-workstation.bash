@@ -163,6 +163,8 @@ else
 		tail ~/.inputrc; echo
 	fi
 fi
+echo
+
 if grep -Fqs 'set keymap vi' ~/.inputrc
 then
 	echo ~/.inputrc contains '"set keymap vi"'
@@ -172,6 +174,21 @@ else
 	if [[ $REPLY =~ ^[yY]$ ]]
 	then
 		echo 'set keymap vi' >> ~/.inputrc
+		echo tail of ~/.inputrc:; echo
+		tail ~/.inputrc; echo
+	fi
+fi
+echo
+
+if grep -Fqs 'set show-mode-in-prompt on' ~/.inputrc
+then
+	echo ~/.inputrc contains '"set show-mode-in-prompt on"'
+else
+	read -p 'echo set show-mode-in-prompt on >> ~/.inputrc?(y, q, or /.*/ to skip)' -n 1 -r
+	echo
+	if [[ $REPLY =~ ^[yY]$ ]]
+	then
+		echo 'set show-mode-in-prompt on' >> ~/.inputrc
 		echo tail of ~/.inputrc:; echo
 		tail ~/.inputrc; echo
 	fi
