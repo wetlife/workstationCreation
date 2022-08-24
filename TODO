@@ -1,0 +1,16 @@
+- ensure compton loads
+- feh in i3 to fill both screens
+  - exec --no-startup-id feh --no-xinerama --random ~/Pictures/*
+- implement i3 alt-tab
+  - bindsym $mod+Tab workspace back_and_forth
+- script installation of additional software in init-script
+  - sudo apt install caffeine xautolock
+- try for autolock
+  - exec --no-startup-id xautolock -time 5 -locker 'i3lock -c 000000' -corners +-00
+  - exec_always xautolock -time 1 -locker "xset dpms force off" -notify 5 -notifier "i3lock -n -c 502800" -corners +-00
+- find a sw way to change audio output from headphones to speakers
+- indicate in i3status which audio-output is active
+- remove wireless indicator from i3status on desktop
+- script setup of lifelike tts on workstation
+  - see and hear https://erogol.github.io/ddc-samples/
+  - see and hear https://google.github.io/tacotron/publications/tacotron/index.html
