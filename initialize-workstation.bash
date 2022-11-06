@@ -8,7 +8,7 @@ SCRIPT_DIR="$(  cd "$( dirname "${BASH_SOURCE[0]}" )" 2>&1 >/dev/null && pwd cd 
 echo "\$SCRIPT_DIR: $SCRIPT_DIR"
 
 ###############################################################
-# ask to ACT, ACT, and VERIFY success or fail                 #
+# ask to ASK, ACT, and VERIFY success or fail                 #
 #     USAGE: ask_act_verify ACT VERIFY                        #
 #     arg act: act realizes the desired state                 #
 #     arg verify: verify desired state against a truthy value #
@@ -58,12 +58,14 @@ does_file_contain_string () {
 	grep -Fq $1 $2
 }
 
-##############################################
-# rsync configuration-files into their $HOME #
-##############################################
-RSYNC_CMD="rsync -vurRt $SCRIPT_DIR/config-files/user/ $HOME"
+echo "
+###############################################
+# rsync configuration-files into their \$HOME #
+###############################################
+"
+RSYNC_CMD="rsync -vurt $SCRIPT_DIR/config-files/user/ $HOME"
 echo preview files to be synchronized:
-rsync -vurRtn $SCRIPT_DIR/config-files/user/ ~/
+rsync -vurtn $SCRIPT_DIR/config-files/user/ ~/
 read -p "$RSYNC_CMD?(y is yes, q quits, and anything else skips)" -n 1 -r
 echo
 if [[ $REPLY =~ ^[qQ]$ ]]
