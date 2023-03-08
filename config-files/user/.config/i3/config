@@ -291,3 +291,10 @@ bindsym $mod+Shift+BackSpace exec qterminal -e "htop"
 #########################
 gaps inner 10
 #gaps outer 10
+
+################################
+# exit i3 without confirmation #
+#######################################################################
+# lifted from https://www.posvic.eu/2020/02/exiting-i3-without-mouse/ #
+#######################################################################
+bindsym $mod+Shift+e exec sh -c '[ $(echo "yes\nno"|dmenu -i -p "Do you really want to exit i3?") = "yes" ] && i3-msg exit'
