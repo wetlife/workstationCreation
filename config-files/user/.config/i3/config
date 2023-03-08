@@ -1,6 +1,6 @@
 #################################################################
 # KYLE include catppuccin-frappe color-definitions to be pretty #
-###############################################
+#################################################################
 set $rosewater #f2d5cf
 set $flamingo  #eebebe
 set $pink      #f4b8e4
@@ -280,3 +280,8 @@ bindsym $mod+Shift+m exec --no-startup-id rofi -show drun
 ##########################################
 #bindsym Mod1+tab workspace back_and_forth
 bindsym $mod+Tab workspace back_and_forth
+
+########################
+# floating htop window #
+########################
+bindsym $mod+Shift+BackSpace exec qterminal -e "htop"

@@ -7,13 +7,13 @@
 SCRIPT_DIR="$(  cd "$( dirname "${BASH_SOURCE[0]}" )" 2>&1 >/dev/null && pwd cd "$( dirname "${BASH_SOURCE[0]}" )" 2>&1 >/dev/null && pwd )"
 echo "\$SCRIPT_DIR: $SCRIPT_DIR"
 
-###############################################################
-# ask to ASK, ACT, and VERIFY success or fail                 #
-#     USAGE: ask_act_verify ACT VERIFY                        #
-#     arg act: act realizes the desired state                 #
-#     arg verify: verify desired state against a truthy value #
-#     TODO FIXME this function has not been tested to work    #
-###############################################################
+#####################################################################
+# ask to ASK, ACT, and VERIFY success or fail                       #
+#     USAGE: ask_act_verify ACT VERIFY                              #
+#     parameter act: act realizes the desired state                 #
+#     parameter verify: verify desired state against a truthy value #
+#     TODO FIXME this function has not been tested to work          #
+#####################################################################
 ask_act_verify ()
 {
 	act=$1
@@ -279,11 +279,43 @@ then
 fi
 echo
 
+
+#########################
+# append GOPATH to PATH #
+#########################
+read -p 'Append GOPATH to PATH in ~/.bashrc?(y, q, or /.*/ to skip)' -n 1 -r
+echo
+if [[ $REPLY =~ ^[qQ]$ ]]
+then
+    exit 0
+elif [[ $REPLY =~ ^[yY]$ ]]
+then
+	echo 'export PATH="$PATH:$HOME/go/bin"' >> ~/.bashrc
+fi
+echo
+
 ############################
 #### SUDO REQUIRED BELOW ###
 ############################
 ############################
 ############################
+
+##########################################################################
+# set catppuccin-frappe as the colorscheme for qterminal and other tools #
+##########################################################################
+read -p 'Setup cattpuccin-frappe as colorsheme for qterminal?(y, q, or /.*/ to skip)' -n 1 -r
+echo
+if [[ $REPLY =~ ^[qQ]$ ]]
+then
+    exit 0
+elif [[ $REPLY =~ ^[yY]$ ]]
+then
+	git clone https://github.com/catppuccin/qterminal catppuccin-qterminal 
+	sudo cp src/Catppuccin-* /usr/share/qtermwidget5/color-schemes/
+	echo 'NOTICE: now restart qterminal and select the colorscheme "catppuccin-frappe"'
+	echo
+fi
+echo
 
 ####################################################
 # configure synaptics for decent touchpad-behavior #
