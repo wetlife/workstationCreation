@@ -285,3 +285,9 @@ bindsym $mod+Tab workspace back_and_forth
 # floating htop window #
 ########################
 bindsym $mod+Shift+BackSpace exec qterminal -e "htop"
+
+#########################
+# GAPS NEEDS I3WM V4.22 #
+#########################
+gaps inner 10
+#gaps outer 10
