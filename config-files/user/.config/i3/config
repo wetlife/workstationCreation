@@ -1,5 +1,6 @@
 #################################################################
 # KYLE include catppuccin-frappe color-definitions to be pretty #
+# KYLE(I've decided the colors I have defined are sufficient rn)#
 #################################################################
 set $rosewater #f2d5cf
 set $flamingo  #eebebe
@@ -43,6 +44,7 @@ set $mod Mod4
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #KYLE: REPLACED # font pango:monospace 8
+# KYLE find a rad typewriter-font!
 font pango:chilanka 16
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
