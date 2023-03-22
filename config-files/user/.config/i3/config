@@ -301,4 +301,4 @@ gaps inner 10
 #######################################################################
 # lifted from https://www.posvic.eu/2020/02/exiting-i3-without-mouse/ #
 #######################################################################
-bindsym $mod+Shift+e exec sh -c '[ $(echo "yes\nno"|dmenu -i -p "Do you really want to exit i3?") = "yes" ] && i3-msg exit'
+bindsym $mod+Shift+e exec sh -c '[ $(echo "yes\nno"|dmenu -i -p "Exit i3?") = "yes" ] && i3-msg exit'

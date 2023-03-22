@@ -411,11 +411,10 @@ echo
 ##################################
 ## install applications with apt #
 ##################################
-read -p 'apt update and install software?(y, q, or /.*/ to skip)' -n 1 -r
+read -p 'apt update and install software after approving or specifying a list of software?(y, q, or /.*/ to skip)' -n 1 -r
 echo
 if [[ $REPLY =~ ^[yY]$ ]]
 then
-	SOFTWARE_LIST='i3 gccgo-go latexmk texlive texlive-publishers texlive-science texlive-music trash-cli zathura'
 	echo Software to be installed: $SOFTWARE_LIST.
     read -p 'Enter custom list or append to list of software to install?(c(ustom), a(ppend), q(uit), or /.*/ to skip)' -n 1 -r
 	echo
