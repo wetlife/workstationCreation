@@ -300,10 +300,37 @@ echo
 ############################
 ############################
 
+#################################################
+### install typewriter-font used in i3's config #
+#################################################
+read -p "Install typewriter-font  required by i3's config? (y, q, or /.*/ to skip)\n" -n 1 -r
+echo
+if [[ $REPLY =~ ^[qQ]$ ]]
+then
+    exit 0
+elif [[ $REPLY =~ ^[yY]$ ]]
+then
+	FONTNAME="SpecialElite.ttf"
+	FONT_INSTALL_DIR="/usr/share/fonts/truetype/specialelite/"
+	echo "Downloading and installing font $FONT_INSTALL_DIR$FONTNAME."
+	mkdir /tmp/specialelite
+	cd /tmp/specialelite
+	curl https://fonts.google.com/download?family=Special%20Elite -o ./specialelite.zip
+	unzip specialelite.zip
+	sudo mkdir $FONT_INSTALL_DIR
+	sudo mv ./* $FONT_INSTALL_DIR
+	sudo cp "${FONT_INSTALL_DIR}SpecialElite"{-Regular,}.ttf
+	echo "Contents of $FONT_INSTALL_DIR:"
+	ls $FONT_INSTALL_DIR
+else
+	echo "SKIPPED: download and install font SpecialElite-Regular.ttf **required by this system's automatically installed config for i3** "
+fi
+echo
+
 #######################################################################
 # add apt repo from devs and install i3 v>=4.22 for i3 gaps in config #
 #######################################################################
-read -p 'add apt repo from devs and install i3 v>=4.22 for i3 gaps in config? (y, q, or /.*/ to skip)\n' -n 1 -r
+read -p "Add apt repo from i3's developers and install i3 v>=4.22 for i3 gaps, which is required in i3's config line \`gaps inner\`, as documented in the file's comments? (y, q, or /.*/ to skip)\n" -n 1 -r
 echo
 if [[ $REPLY =~ ^[qQ]$ ]]
 then
