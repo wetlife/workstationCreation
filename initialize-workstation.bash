@@ -346,7 +346,7 @@ then
 	sudo apt install i3
 	echo
 else
-	echo "SKIPPED: add apt repo and download the latest stable i3"
+	echo "SKIPPED adding apt repo and download the latest stable i3"
 	echo "WARNING: if i3 version is <v4.22 then its config will err."
 	i3 --version
 fi
@@ -415,7 +415,7 @@ read -p 'apt update and install software after approving or specifying a list of
 echo
 if [[ $REPLY =~ ^[yY]$ ]]
 then
-	SOFTWARE_LIST='alttab gccgo-go i3 latexmk picom texlive texlive-publishers texlive-science texlive-music trash-cli zathura'
+	SOFTWARE_LIST='alttab font-manager gccgo-go i3 latexmk picom texlive texlive-publishers texlive-science texlive-music trash-cli zathura'
 	echo Software to be installed: $SOFTWARE_LIST.
     read -p 'Enter custom list or append to list of software to install?(c(ustom), a(ppend), q(uit), or /.*/ to skip)' -n 1 -r
 	echo
